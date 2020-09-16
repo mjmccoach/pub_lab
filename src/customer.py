@@ -7,3 +7,6 @@ class Customer:
 
     def reduce_wallet(self, drink):
         self.wallet -= drink.price
+
+    def chug_drink(self, drink):
+        self.drunkenness += drink.alcohol_units
