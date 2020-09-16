@@ -18,7 +18,7 @@ class Pub:
 
     def sell_food_to_customer(self, food, customer):
         customer.reduce_wallet(food)
-        self.increase_till(drink)
+        self.increase_till(food)
         customer.rejuvenate(food)
 # could add return if wanted
         

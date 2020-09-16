@@ -14,3 +14,5 @@ class TestFood(unittest.TestCase):
     
     def test_food_has_rejuvenation_level(self):
         self.assertEqual(100, self.food.rejuvenation_level)
+
+    

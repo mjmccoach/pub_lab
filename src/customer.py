@@ -10,3 +10,6 @@ class Customer:
 
     def chug_drink(self, drink):
         self.drunkenness += drink.alcohol_units
+
+    def rejuvenate(self, food):
+        self.drunkenness -= food.rejuvenation_level
