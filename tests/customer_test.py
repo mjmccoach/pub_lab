@@ -5,6 +5,7 @@ from src.drink import Drink
 class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Harrison", 15, 30.00)
+        self.drink4 = Drink("Wine", 9.75, 12)
 
     def test_customer_has_name(self):
         self.assertEqual("Harrison", self.customer.name)
@@ -13,12 +14,13 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(30.00, self.customer.wallet)
 
     def test_reduce_wallet(self):
-        drink = Drink("Wine", 9.75, 12)
-        self.customer.reduce_wallet(drink)
+        self.customer.reduce_wallet(self.drink4)
         self.assertEqual(20.25, self.customer.wallet)
 
     def test_customer_has_drunkenness(self):
         self.assertEqual(0, self.customer.drunkenness)
 
 
-    # def test_chug_drink(self):
+    def test_chug_drink(self):
+        self.customer.chug_drink(self.drink4)
+        self.assertEqual(12, self.customer.drunkenness)

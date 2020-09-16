@@ -24,16 +24,14 @@ class TestPub(unittest.TestCase):
         self.assertEqual(103.20, self.pub.till)
 
     def test_sell_drink_to_customer_over_18(self):
-        # drink = Drink("Highland Park 18yr", 6.95)
-        # customer = Customer("Malcolm", 33, 25.00)
+    
         self.pub.sell_drink_to_customer(self.drink, self.customer1)
         self.assertEqual(106.95, self.pub.till)
         self.assertEqual(18.05, self.customer1.wallet)
 
 
     def test_sell_drink_to_customer_under_18(self):
-        # drink = Drink("Highland Park 18yr", 6.95)
-        # customer = Customer("Malcolm", 17, 25.00)
+
         self.pub.sell_drink_to_customer(self.drink, self.customer2)
         self.assertEqual(100.00, self.pub.till)
         self.assertEqual(30.00, self.customer2.wallet)
