@@ -11,16 +11,9 @@ class Pub:
         self.till += drink.price
     
     def sell_drink_to_customer(self, drink, customer):
-        if customer.age >= 18:
+        if customer.age >= 18 and customer.drunkenness <= 15:
             customer.reduce_wallet(drink)
             self.increase_till(drink)
 # could add return if wanted
-
-    
-    # def sell_drink_to_customer(self, customer, drink):
-    #     customer = Customer.name
-    #     drink = Drink.name
-    #     self.till += Drink.price
-    #     Customer.wallet -= Drink.price
         
 

@@ -12,6 +12,7 @@ class TestPub(unittest.TestCase):
         
         self.customer1 = Customer("Malcolm", 33, 25.00)
         self.customer2 = Customer("Harrison", 15, 30.00)
+        self.customer3 = Customer("Dave", 21, 50.00)
 
     def test_pub_has_name(self):
         self.assertEqual("Ox", self.pub.name)
@@ -23,7 +24,7 @@ class TestPub(unittest.TestCase):
         self.pub.increase_till(self.drink3)
         self.assertEqual(103.20, self.pub.till)
 
-    def test_sell_drink_to_customer_over_18(self):
+    def test_sell_drink_to_customer_over_18_and_not_drunk(self):
     
         self.pub.sell_drink_to_customer(self.drink, self.customer1)
         self.assertEqual(106.95, self.pub.till)
@@ -35,3 +36,11 @@ class TestPub(unittest.TestCase):
         self.pub.sell_drink_to_customer(self.drink, self.customer2)
         self.assertEqual(100.00, self.pub.till)
         self.assertEqual(30.00, self.customer2.wallet)
+
+
+    def test_sell_drink_to_customer_drunk(self):
+        self.customer3.drunkenness = 20
+        
+        self.pub.sell_drink_to_customer(self.drink, self.customer3)
+        self.assertEqual(100.00, self.pub.till)
+        self.assertEqual(50.00, self.customer3.wallet)
