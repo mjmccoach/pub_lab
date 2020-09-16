@@ -10,7 +10,10 @@ class Pub:
     def increase_till(self, drink):
         self.till += drink.price
     
-    def sell_drink_
+    def sell_drink_to_customer(self, drink, customer):
+        customer.reduce_wallet(drink)
+        self.increase_till(drink)
+
 
     
     # def sell_drink_to_customer(self, customer, drink):

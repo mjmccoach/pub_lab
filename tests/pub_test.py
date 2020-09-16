@@ -18,5 +18,9 @@ class TestPub(unittest.TestCase):
         self.pub.increase_till(drink)
         self.assertEqual(103.20, self.pub.till)
 
-    # def test_sell_drink_to_customer():
-    #     Pub.drinks = []    
+    def test_sell_drink_to_customer(self):
+        drink = Drink("Highland Park 18yr", 6.95)
+        customer = Customer("Malcolm", 25.00)
+        self.pub.sell_drink_to_customer(drink, customer)
+        self.assertEqual(106.95, self.pub.till)
+        self.assertEqual(18.05, customer.wallet)
