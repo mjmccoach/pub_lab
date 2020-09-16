@@ -13,6 +13,6 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(30.00, self.customer.wallet)
 
     def test_reduce_wallet(self):
-        drink = Drink("Wine", 9.75)
+        drink = Drink("Wine", 9.75, 12)
         self.customer.reduce_wallet(drink)
         self.assertEqual(20.25, self.customer.wallet)
