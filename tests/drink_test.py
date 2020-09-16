@@ -10,3 +10,6 @@ class TestDrink(unittest.TestCase):
 
     def test_drink_has_price(self):
         self.assertEqual(5.50, self.drink.price)
+    
+    def test_drink_has_alcohol_units(self):
+        self.assertEqual(4, self.drink.alcohol_units)
