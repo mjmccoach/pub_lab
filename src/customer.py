@@ -3,6 +3,7 @@ class Customer:
         self.name = name
         self.age = age
         self.wallet = wallet
+        self.drunkenness = 0
 
     def reduce_wallet(self, drink):
         self.wallet -= drink.price
